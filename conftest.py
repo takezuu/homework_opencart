@@ -13,7 +13,7 @@ def pytest_addoption(parser):
         "--browser_name", default="chrome", help="Choose browser"
     )
     parser.addoption(
-        "--base_url"
+        "--base_url", default="http://192.168.8.113:8081/"
     )
 
 
@@ -23,11 +23,14 @@ def browser(request):
     if browser_name == "chrome":
         service = Service(executable_path=DRIVER_PATH + "chromedriver.exe")
         browser = webdriver.Chrome(service=service)
+        browser.maximize_window()
     elif browser_name == "firefox":
         service = Service(executable_path=DRIVER_PATH + "geckodriver.exe")
         browser = webdriver.Firefox(service=service)
+        browser.maximize_window()
     elif browser_name == "opera":
         browser = webdriver.Opera(executable_path=OperaDriverManager().install())
+        browser.maximize_window()
     else:
         raise pytest.UsageError("--browser_name should be chrome, firefox or opera")
     yield browser
