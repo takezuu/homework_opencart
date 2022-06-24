@@ -8,11 +8,11 @@ import allure
 
 class AdminPage(BasePage):
     PATH = 'admin'
-    CLICKABLE_ELEMENT = LOGIN_BUTTON = (By.CSS_SELECTOR, "[type='submit1']")
-    VISIBILITY_ELEMENTS = (By.CSS_SELECTOR, ".panel.panel-default1")
-    PRESENCE_ELEMENT = (By.CSS_SELECTOR, "#footer a1")
-    VISIBILITY_ELEMENT = LOGIN_FIELD = (By.CSS_SELECTOR, "#input-username1")
-    ELEMENT_ATTRIBUTE = PASSWORD_FIELD = ((By.CSS_SELECTOR, "#input-password1"), 'type')
+    CLICKABLE_ELEMENT = LOGIN_BUTTON = (By.CSS_SELECTOR, "[type='submit']")
+    VISIBILITY_ELEMENTS = (By.CSS_SELECTOR, ".panel.panel-default")
+    PRESENCE_ELEMENT = (By.CSS_SELECTOR, "#footer a")
+    VISIBILITY_ELEMENT = LOGIN_FIELD = (By.CSS_SELECTOR, "#input-username")
+    ELEMENT_ATTRIBUTE = PASSWORD_FIELD = ((By.CSS_SELECTOR, "#input-password"), 'type')
     LOGIN = 'user'
     PASSWORD = 'bitnami'
     product_name = 'Asus laptop'
